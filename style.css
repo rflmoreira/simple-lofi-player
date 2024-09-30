@@ -1,0 +1,122 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem; /* Espaçamento interno */
+  background-color: #00000086; /* Fundo semi-transparente */
+  border-radius: 10px; /* Borda arredondada */
+  box-shadow: 5px 5px 30px 7px #000000;
+  backdrop-filter: saturate(180%) blur(13px);
+  font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700; /* Bold font */
+  font-style: normal;
+  font-variation-settings: "wdth" 120; /* largura da fonte */
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.time span {
+  font-size: 16px;
+  color: #ffffff86;
+}
+
+.footer {
+  width: 100%;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #3a3a3a5d;
+  cursor: pointer;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.progress {
+  height: 8px;
+  background-color: #ffffff86;
+  border-radius: 5px;
+}
+
+.music-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#musicName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0 1rem 0;
+  font-size: 1.5rem;
+  color: #ffffffce;
+}
+
+#container-botoes {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+  
+button {
+    background-color: inherit;
+    color: #ffffff86;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+.rounded-image {
+  border-radius: 10px; /* borda da capa */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+
+}
+
+.footer-inferior {
+  position: fixed; /* Tira o elemento do fluxo normal e o fixa */
+  bottom: 0; /* Posiciona a borda inferior na parte inferior da janela */
+  left: 0; /* Posiciona a borda esquerda na borda esquerda da janela */
+  width: 100%; /* Ocupa toda a largura da viewport */
+  z-index: 999; /* Garante que o rodapé fique acima de outros elementos */
+  background-color: #00000086;
+  backdrop-filter: saturate(180%) blur(13px);
+  box-shadow: 5px 5px 30px 7px #000000;
+  font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700; /* Bold font */
+  font-style: normal;
+  font-variation-settings: "wdth" 120; /* largura da fonte */
+}
+
+.footerContent{
+  width: 80%;
+  margin: auto;
+  padding: 5px;
+  text-align: center;
+  font-size: 83%;
+  color: #ffffff86;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Lofi Player 🎶</title>
+  <link rel="icon" type="image/x-icon" href="./src/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./src/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./src/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./src/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="./src/favicon/site.webmanifest" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <div class="player">
+      <img src="./src/capa.jpeg" alt="capa" class="rounded-image" />
+      <div id="musicName"></div>
+
+      <div class="footer">
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+        <div class="time">
+          <span id="currentTime">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+
+        <audio id="player" src=""></audio>
+        <div id="container-botoes">
+          <button id="prevButton"><i style="font-size: 3rem;" class='bx bx-skip-previous-circle'></i></button>
+          <button id="playPauseButton"><i style="font-size: 4rem;" class='bx bx-play-circle'></i></button>
+          <button id="nextButton"><i style="font-size: 3rem;" class='bx bx-skip-next-circle'></i></button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer-inferior">
+      <div class='footerContent'>
+        Feito com <i class='bx bxs-heart' style='color: red;'></i> Rafael Moreira.
+      </div>
+    </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
