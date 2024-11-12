@@ -86,7 +86,6 @@ function mudarBackground() {
     "./src/gifs/mJhkYA1gnvY7r481qL.gif",
     "./src/gifs/7bEpr3NIPNY0E.gif",
     "./src/gifs/26tn33aiTi1jkl6H6.gif",
-    "./src/gifs/2yzgWbRc97QOIUpklz.gif",
     "./src/gifs/yA1xRW.gif",
     "./src/gifs/the-simpsons-dancing.gif",
   ];
