@@ -30,6 +30,25 @@ const playPause = () => {
   }
 };
 
+// ... (seu código existente)
+
+document.addEventListener("keydown", handleKeyPress);
+
+function handleKeyPress(event) {
+  const key = event.key;
+  switch (key) {
+    case " ": // Espaço para play/pause
+      playPause();
+      break;
+    case "ArrowRight": // Seta para a direita para próxima música
+      prevNextMusic();
+      break;
+    case "ArrowLeft": // Seta para a esquerda para música anterior
+      prevNextMusic("prev");
+      break;
+  }
+}
+
 player.ontimeupdate = () => updateTime();
 
 const updateTime = () => {
@@ -63,11 +82,13 @@ function mudarBackground() {
     "./src/gifs/dsd7XbYg0e6hG0A7i8.gif",
     "./src/gifs/music-anime-anime.gif",
     "./src/gifs/810fd7f0fea4ecd8c53dd99ca2c2b47d4ed85a.gif",
-    "./src/gifs/9Wgp.gif",
     "./src/gifs/2seKKLp1n0sEeJLYTK.gif",
     "./src/gifs/mJhkYA1gnvY7r481qL.gif",
     "./src/gifs/7bEpr3NIPNY0E.gif",
     "./src/gifs/26tn33aiTi1jkl6H6.gif",
+    "./src/gifs/2yzgWbRc97QOIUpklz.gif",
+    "./src/gifs/yA1xRW.gif",
+    "./src/gifs/the-simpsons-dancing.gif",
   ];
 
   const randomIndex = Math.floor(Math.random() * backgrounds.length);
