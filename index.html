@@ -14,11 +14,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cursor/cursor.css" />
 </head>
 <body>
   <main>
     <div class="player">
-      <img src="./src/capa.jpeg" alt="capa" class="rounded-image" />
+      <img src="./src/capa.png" alt="capa" class="rounded-image" id="capa-img" />
       <div id="musicName"></div>
 
       <div class="footer">
@@ -38,14 +39,17 @@
         </div>
       </div>
     </main>
-
+    
     <footer class="footer-inferior">
       <div class='footerContent'>
-        © 2024 · Feito com <i class='bx bxs-heart' style='color: red;'></i>
-        por <a href="https://github.com/rflmoreira" target="_blank">Rafael Moreira <i class='bx bx-link-external'></i></a>
+        © 2025 · Feito com <i class='bx bxs-heart' style='color: red;'></i>
+        por <a href="https://github.com/rflmoreira" target="_blank" id="meuLink">Rafael Moreira <i class='bx bx-link-external'></i></a>
       </div>
     </footer>
-
+    <div id="bg-fade1" class="bg-fade"></div>
+    <div id="bg-fade2" class="bg-fade"></div>
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
   <script type="module" src="script.js"></script>
 </body>
 </html>

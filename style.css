@@ -1,4 +1,6 @@
-*{
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+* {
+  cursor: none !important;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -10,10 +12,15 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: black;
-  background-size: cover;
-  background-position: center;
-  transition: background-image 1s ease-in-out;
+  background: none !important; /* Para garantir que só o #bg-fade apareça */
+}
+/* Para garantir que o cursor não apareça */
+section {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+flex-direction: column;
 }
 
 .player {
@@ -22,7 +29,7 @@ body {
   align-items: center;
   padding: 2rem; /* Espaçamento interno */
   background-color: #00000086; /* Fundo semi-transparente */
-  border-radius: 10px; /* Borda arredondada */
+  border-radius: 20px; /* Borda arredondada */
   box-shadow: 5px 5px 30px 7px #000000;
   backdrop-filter: saturate(180%) blur(13px);
   font-family: "Fredoka", sans-serif;
@@ -50,7 +57,6 @@ body {
 .progress-bar {
   height: 8px;
   background-color: #3a3a3a5d;
-  cursor: pointer;
   margin-bottom: 5px;
   border-radius: 5px;
 }
@@ -68,12 +74,11 @@ body {
 }
 
 #musicName {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   margin: 2rem 0 1rem 0;
   font-size: 1.5rem;
-  color: #ffffffce;
+  text-decoration: none;
+  color: #ffffff86;
 }
 
 #container-botoes {
@@ -83,19 +88,27 @@ body {
 }
   
 button {
-    background-color: inherit;
-    color: #ffffff86;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-  }
-
-.rounded-image {
-  border-radius: 10px; /* borda da capa */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
-
+  background-color: inherit;
+  color: #ffffff86;
+  border: none;
+  padding: 10px;
 }
 
+.rounded-image {
+  width: 220px;
+  /* ajuste o valor conforme desejar */
+  height: 220px;
+  /* ajuste o valor conforme desejar */
+  object-fit: cover;
+  /* mantém o aspecto da imagem */
+  border-radius: 10px;
+  /* borda da capa */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  /* Sombra */
+  background-color: #3a3a3a5d;
+  display: block;
+  margin: 0 auto;
+}
 .footer-inferior {
   position: fixed; /* Tira o elemento do fluxo normal e o fixa */
   bottom: 0; /* Posiciona a borda inferior na parte inferior da janela */
@@ -119,4 +132,34 @@ button {
   text-align: center;
   font-size: 83%;
   color: #ffffff86;
+}
+
+#meuLink {
+  text-decoration: none;
+  color: inherit; /* ou outra cor desejada */
+}
+
+.bg-fade {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.7s;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.botao-desativado {
+  opacity: 0.5;
+  pointer-events: none;
+  filter: grayscale(1);
+}
+
+#bg-fade1,
+#bg-fade2 {
+  background-color: #000 !important;
+  /* ...outros estilos existentes... */
 }
