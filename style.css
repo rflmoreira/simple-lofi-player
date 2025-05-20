@@ -173,5 +173,11 @@ button {
 #bg-fade1,
 #bg-fade2 {
   background-color: #000 !important;
-  /* ...outros estilos existentes... */
+}
+
+/* Esconde o cursor apenas em telas maiores, deixa o cursor padrão no mobile */
+@media (pointer: coarse), (max-width: 900px) {
+  * {
+    cursor: auto !important;
+  }
 }
