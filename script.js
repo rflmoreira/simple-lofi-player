@@ -31,13 +31,23 @@ const playPause = () => {
     player.play();
     playPauseButton.innerHTML = textButtonPause;
     updateTime();
-    atualizarBotoesAvanco(); // <-- Adicione esta linha aqui!
+    atualizarBotoesAvanco();
     return;
   }
 
   if (player.paused) {
+    // Se for a última música, recarrega o src e reinicia do começo
+    if (index === songs.length - 1) {
+      player.src = songs[index].src;
+      player.currentTime = 0;
+    }
     player.play();
-    playPauseButton.innerHTML = textButtonPause;
+    // Se for a última música, mostra o ícone de stop
+    if (index === songs.length - 1) {
+      playPauseButton.innerHTML = `<i style="font-size: 4rem;" class='bx bx-stop-circle'></i>`;
+    } else {
+      playPauseButton.innerHTML = textButtonPause;
+    }
   } else {
     player.pause();
     playPauseButton.innerHTML = textButtonPlay;
@@ -63,14 +73,34 @@ function handleKeyPress(event) {
 
 player.ontimeupdate = () => updateTime();
 
+let isBuffering = false;
+
+player.addEventListener('waiting', () => {
+  isBuffering = true;
+  currentTime.textContent = "Buffering...";
+});
+
+player.addEventListener('playing', () => {
+  isBuffering = false;
+  updateTime();
+});
+
 const updateTime = () => {
   const durationFormatted = isNaN(player.duration) ? 0 : player.duration;
   const progressWidth = durationFormatted
     ? (player.currentTime / durationFormatted) * 100
     : 0;
 
-  // Mostra -:-- se não houver música ou tempo inválido
-  if (!player.src || isNaN(player.currentTime) || player.currentTime === 0 && durationFormatted === 0) {
+  // Mostra Buffering... se estiver carregando
+  if (isBuffering) {
+    currentTime.textContent = "Buffering...";
+    duration.textContent = "-:--";
+  } else if (
+    !player.src ||
+    isNaN(player.currentTime) ||
+    (player.currentTime === 0 && durationFormatted === 0) ||
+    index === songs.length - 1
+  ) {
     currentTime.textContent = "-:--";
     duration.textContent = "-:--";
   } else {
