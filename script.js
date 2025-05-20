@@ -91,7 +91,7 @@ const updateTime = () => {
     ? (player.currentTime / durationFormatted) * 100
     : 0;
 
-  // Mostra Buffering... se estiver carregando
+  // Exibe "Buffering..." enquanto carrega
   if (isBuffering) {
     currentTime.textContent = "Buffering...";
     duration.textContent = "-:--";
@@ -101,15 +101,16 @@ const updateTime = () => {
     (player.currentTime === 0 && durationFormatted === 0) ||
     index === songs.length - 1
   ) {
-    currentTime.textContent = "-:--";
-    duration.textContent = "-:--";
+    currentTime.innerHTML = `<span style="opacity:0.5">-:--</span>`;
+    duration.innerHTML = `<span style="opacity:0.5">-:--</span>`;
   } else {
     const currentMinutes = Math.floor(player.currentTime / 60);
     const currentSeconds = Math.floor(player.currentTime % 60);
     currentTime.textContent = currentMinutes + ":" + formatZero(currentSeconds);
-    // O duration.innerHTML já é tratado abaixo para o botão AO VIVO
+    // O botão AO VIVO é tratado logo abaixo
   }
 
+  // Mostra botão AO VIVO na última faixa, senão mostra desabilitado
   if (index === songs.length - 1) {
     duration.innerHTML = `<button id="btn-ao-vivo" style="background:none;border:none;padding:0px;margin:5;font:inherit;color:red;cursor:pointer;display:inline-block;">AO VIVO</button>`;
   } else {
@@ -119,16 +120,14 @@ const updateTime = () => {
   progress.style.width = progressWidth + "%";
 };
 
-// Adicione este evento para o botão AO VIVO
+// Evento para alternar entre a última faixa (ao vivo) e a segunda música ao clicar no botão AO VIVO
 document.addEventListener("click", (e) => {
   if (e.target && e.target.id === "btn-ao-vivo") {
-    e.preventDefault(); // Garante que o clique não seja perdido
+    e.preventDefault();
     setTimeout(() => {
       if (index === songs.length - 1) {
-        // Se já está na última (ao vivo), vai para a segunda música
         index = 1;
       } else {
-        // Se não está, vai para a última (ao vivo)
         index = songs.length - 1;
       }
       player.src = songs[index].src;
@@ -138,7 +137,7 @@ document.addEventListener("click", (e) => {
       playPause();
       updateTime();
       atualizarBotoesAvanco();
-    }, 10); // Pequeno delay para garantir o clique
+    }, 10);
   }
 });
 
