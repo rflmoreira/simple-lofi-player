@@ -180,4 +180,8 @@ button {
   * {
     cursor: auto !important;
   }
+  .cursor,
+  .cursor2 {
+    display: none !important;
+  }
 }
