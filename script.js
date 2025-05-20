@@ -226,6 +226,7 @@ document.addEventListener('mousemove', function(e){
   cursorinner.style.top = y + 'px';
 });
 
+// Efeito de clique no cursor personalizado
 document.addEventListener('mousedown', function(){
   cursor.classList.add('click');
   cursorinner.classList.add('cursorinnerhover');
@@ -236,6 +237,7 @@ document.addEventListener('mouseup', function(){
   cursorinner.classList.remove('cursorinnerhover');
 });
 
+// Cursor reage ao passar o mouse sobre links
 a.forEach(item => {
   item.addEventListener('mouseover', () => {
     cursor.classList.add('hover');
@@ -245,6 +247,7 @@ a.forEach(item => {
   });
 });
 
+// Cursor reage ao passar o mouse sobre botões
 buttons.forEach(item => {
   item.addEventListener('mouseover', () => {
     cursor.classList.add('hover');
@@ -254,10 +257,10 @@ buttons.forEach(item => {
   });
 });
 
-// Nova função para atualizar os botões de avanço
+// Atualiza o estado dos botões de avançar e voltar conforme a música atual
 function atualizarBotoesAvanco() {
   if (index === 0) {
-    // Na primeira música, desativa ambos
+    // Primeira música: ambos desativados
     nextButton.disabled = true;
     prevButton.disabled = true;
     nextButton.classList.add('botao-desativado');

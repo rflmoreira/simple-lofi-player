@@ -1,4 +1,6 @@
+/* Fonte principal do projeto */
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 * {
   cursor: none !important;
   padding: 0;
@@ -6,39 +8,43 @@
   box-sizing: border-box;
 }
 
+/* Centraliza tudo na tela */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-  background: none !important; /* Para garantir que só o #bg-fade apareça */
-}
-/* Para garantir que o cursor não apareça */
-section {
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-flex-direction: column;
+  background: none !important; /* Só o fundo animado aparece */
 }
 
+/* Centralização dos elementos principais */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* Área do player com visual moderno */
 .player {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem; /* Espaçamento interno */
-  background-color: #00000086; /* Fundo semi-transparente */
-  border-radius: 20px; /* Borda arredondada */
+  padding: 2rem;
+  background-color: #00000086;
+  border-radius: 20px;
   box-shadow: 5px 5px 30px 7px #000000;
   backdrop-filter: saturate(180%) blur(13px);
   font-family: "Fredoka", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 700; /* Bold font */
+  font-weight: 700;
   font-style: normal;
-  font-variation-settings: "wdth" 120; /* largura da fonte */
+  font-variation-settings: "wdth" 120;
 }
 
+/* Exibição dos tempos de música */
 .time {
   display: flex;
   align-items: center;
@@ -50,10 +56,12 @@ flex-direction: column;
   color: #ffffff86;
 }
 
+/* Rodapé ocupa toda a largura */
 .footer {
   width: 100%;
 }
 
+/* Barra de progresso da música */
 .progress-bar {
   height: 8px;
   background-color: #3a3a3a5d;
@@ -67,12 +75,14 @@ flex-direction: column;
   border-radius: 5px;
 }
 
+/* Container das informações da música */
 .music-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Nome da música centralizado */
 #musicName {
   align-items: center;
   margin: 2rem 0 1rem 0;
@@ -81,6 +91,7 @@ flex-direction: column;
   color: #ffffff86;
 }
 
+/* Botões alinhados */
 #container-botoes {
   width: 100%;
   display: flex;
@@ -94,35 +105,32 @@ button {
   padding: 10px;
 }
 
+/* Imagem da capa arredondada */
 .rounded-image {
   width: 220px;
-  /* ajuste o valor conforme desejar */
   height: 220px;
-  /* ajuste o valor conforme desejar */
   object-fit: cover;
-  /* mantém o aspecto da imagem */
   border-radius: 10px;
-  /* borda da capa */
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-  /* Sombra */
   background-color: #3a3a3a5d;
   display: block;
   margin: 0 auto;
 }
+
+/* Rodapé fixo na parte inferior */
 .footer-inferior {
-  position: fixed; /* Tira o elemento do fluxo normal e o fixa */
-  bottom: 0; /* Posiciona a borda inferior na parte inferior da janela */
-  left: 0; /* Posiciona a borda esquerda na borda esquerda da janela */
-  width: 100%; /* Ocupa toda a largura da viewport */
-  z-index: 999; /* Garante que o rodapé fique acima de outros elementos */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
   background-color: #00000086;
   backdrop-filter: saturate(180%) blur(13px);
   box-shadow: 5px 5px 30px 7px #000000;
   font-family: "Fredoka", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 700; /* Bold font */
+  font-weight: 700;
   font-style: normal;
-  font-variation-settings: "wdth" 120; /* largura da fonte */
+  font-variation-settings: "wdth" 120;
 }
 
 .footerContent{
@@ -134,11 +142,13 @@ button {
   color: #ffffff86;
 }
 
+/* Link sem sublinhado */
 #meuLink {
   text-decoration: none;
-  color: inherit; /* ou outra cor desejada */
+  color: inherit;
 }
 
+/* Fundo animado ocupa toda a tela */
 .bg-fade {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -152,12 +162,14 @@ button {
   pointer-events: none;
 }
 
+/* Botão desativado fica apagado e sem interação */
 .botao-desativado {
   opacity: 0.5;
   pointer-events: none;
   filter: grayscale(1);
 }
 
+/* Fundos do player */
 #bg-fade1,
 #bg-fade2 {
   background-color: #000 !important;
